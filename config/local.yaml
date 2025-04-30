@@ -1,0 +1,11 @@
+env : "local"
+token_ttl : 1h
+grpc:
+  port: 44044
+  timeout : 10h
+db:
+  port: 5434
+  host : "localhost"
+  username : "postgres"
+  dbname : "postgres"
+  sslmode : "disable"
