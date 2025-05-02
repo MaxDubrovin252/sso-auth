@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  sso:
+    build: ./
+    command: ./sso-auth
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    environment:
+      - DB_PASSWORD=qwerty
+
+  db:
+    image: postgres:latest
+    volumes:
+      - ./.database/postgres/data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=qwerty
+    ports:
+      - 5436:5432
